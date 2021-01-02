@@ -23,7 +23,8 @@ from rnn_models import simple_model
 #save_clean_sentences(en_tokenized_padded, "en_tokenized_padded")
 #save_clean_sentences(sp_tokenized_padded, "sp_tokenized_padded")
 
-
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 
 
@@ -34,8 +35,8 @@ Max Spanish sentence: 632
 max_spanish_sequence_length = 632
 max_english_sequence_lengh = 642
 
-en_tokenized = load_clean_sentences("english_tokenized")
-sp_tokenized = load_clean_sentences("spanish_tokenized")
+en_tokenized = load_clean_sentences("/home/8id/scriptTesting/translateData/english_tokenized")
+sp_tokenized = load_clean_sentences("/home/8id/scriptTesting/translateData/spanish_tokenized")
 sp_tokenizer = loadTokenizer("sp")
 en_tokenizer = loadTokenizer("en")
 
@@ -67,7 +68,7 @@ print(simple_rnn_model.summary())
 simple_rnn_model.fit(tmp_x, sp_tokenized_padded, batch_size=32, epochs=10, validation_split=0.2)
 path = "savedModel.ckpt"
 
-simple_rnn_model.save()
+simple_rnn_model.save(path)
 print(logits_to_text(simple_rnn_model.predict(tmp_x[:1])[0], sp_tokenizer))
 # print("\nCorrect Translation:")
 # print(french_sentences[:1])
