@@ -65,7 +65,7 @@ simple_rnn_model = simple_model(
 
 print(simple_rnn_model.summary())
 
-simple_rnn_model.fit(tmp_x, sp_tokenized_padded, batch_size=128, epochs=10, validation_split=0.2)
+simple_rnn_model.fit(tmp_x, sp_tokenized_padded, batch_size=100, epochs=10, validation_split=0.2)
 path = "savedModel.ckpt"
 
 simple_rnn_model.save(path)
