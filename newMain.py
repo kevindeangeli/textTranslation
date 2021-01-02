@@ -37,8 +37,8 @@ max_english_sequence_lengh = 642
 
 en_tokenized = load_clean_sentences("/home/8id/scriptTesting/translateData/english_tokenized")
 sp_tokenized = load_clean_sentences("/home/8id/scriptTesting/translateData/spanish_tokenized")
-sp_tokenizer = loadTokenizer("sp")
-en_tokenizer = loadTokenizer("en")
+sp_tokenizer = loadTokenizer("/home/8id/scriptTesting/translateData/sp")
+en_tokenizer = loadTokenizer("/home/8id/scriptTesting/translateData/en")
 
 en_tokenized_padded = pad(en_tokenized, 642)
 sp_tokenized_padded = pad(sp_tokenized, 632)
