@@ -3,12 +3,7 @@ Created by: Kevin De Angeli
 Email: Kevindeangeli@utk.edu
 Date: 12/30/20
 '''
-import helper
-import collections
-import numpy as np
-import project_tests as tests
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+
 from tensorflow.keras.models import Model, Sequential
 from tensorflow.keras.layers import GRU, Input, Dense, TimeDistributed, Activation, RepeatVector, Bidirectional, Dropout, LSTM
 from tensorflow.keras.layers import Embedding
